@@ -9,5 +9,5 @@ python2 get-pip.py
 python3 get-pip.py
 rm "get-pip.py"
 
-~/.local/bin/pip3 install neovim youtube-dl manimlib pipupgrade matplotlib pycairo pygobject
+~/.local/bin/pip3 install neovim youtube-dl manimlib pipupgrade matplotlib pycairo pygobject pillow flake8 requests
 ~/.local/bin/pip2 install neovim
