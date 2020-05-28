@@ -7,3 +7,6 @@ tar -xzf texlive.tar.gz
 
 cd texlive
 ./install-tl --profile ../files/texlive.profile
+
+tlmgr init-usertree
+tlmgr repository set http://mirror.utexas.edu/ctan/systems/texlive/tlnet
