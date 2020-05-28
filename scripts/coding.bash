@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-cd "~/.install-temp"
+cd ~/.install-temp
 
 sudo apt install neovim
 

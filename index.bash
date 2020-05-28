@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
 # Init
-mkdir "~/.install-temp"
-cd "~/.install-temp"
+mkdir ~/.install-temp
+cd ~/.install-temp
 
 # Install dependencies
 sudo apt update
@@ -30,4 +30,4 @@ cp -r repo/files/home/* ~/
 sudo apt remove vim
 sudo apt autoremove
 
-rm -rf "~/.install-temp" # Self destruct
+rm -rf ~/.install-temp # Self destruct

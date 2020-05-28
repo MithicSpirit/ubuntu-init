@@ -1,8 +1,9 @@
 #!/usr/bin/bash
 
-cd "~/.install-temp"
+cd ~/.install-temp
 
-sudo apt install tlp powertop xclip
+sudo apt install tlp powertop xclip gimp krita vlc
+snap install authy
 
 curl -L 'https://canary.discord.com/api/download/canary?platform=linux&format=deb' > discord.deb
 sudo apt install ./discord.deb
