@@ -6,8 +6,8 @@ cd ~/.install-temp
 
 # Install dependencies
 sudo apt update
-sudo apt upgrade
-sudo apt install git curl
+sudo apt upgrade -y
+sudo apt install git curl -y
 
 # Download repo
 git clone --depth=1 https://github.com/MithicSpirit/ubuntu-init.git ./repo
@@ -27,7 +27,7 @@ cp -r repo/files/home/* ~/
 ~/scripts/update-all.sh
 
 # Clean up
-sudo apt remove vim
-sudo apt autoremove
+sudo apt remove vim -y
+sudo apt autoremove -y
 
 rm -rf ~/.install-temp # Self destruct

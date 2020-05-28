@@ -2,7 +2,7 @@
 
 cd ~/.install-temp
 
-sudo apt install python3 python2 libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
+sudo apt install python3 python2 libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0 -y
 
 curl -L https://bootstrap.pypa.io/get-pip.py > get-pip.py
 python2 get-pip.py

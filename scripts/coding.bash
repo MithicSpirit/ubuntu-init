@@ -2,7 +2,7 @@
 
 cd ~/.install-temp
 
-sudo apt install neovim
+sudo apt install neovim -y
 
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > vscode.deb
 sudo apt install ./vscode.deb
