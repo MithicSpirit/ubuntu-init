@@ -26,5 +26,8 @@ cp -r repo/files/home/* ~/
 # "Quick" update of everything
 ~/scripts/update-all.sh
 
+# Clean up
 sudo apt remove vim
 sudo apt autoremove
+
+rm -rf "~/.install-temp" # Self destruct
