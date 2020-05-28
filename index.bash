@@ -13,15 +13,16 @@ sudo apt install git curl -y
 git clone --depth=1 https://github.com/MithicSpirit/ubuntu-init.git ./repo
 
 # Run scripts
-repo/scripts/zsh.bash
-repo/scripts/python.bash
-repo/scripts/coding.bash
-repo/scripts/node.bash
-repo/scripts/latex.bash
-repo/scripts/misc.bash
+bash repo/scripts/zsh.bash
+bash repo/scripts/python.bash
+bash repo/scripts/coding.bash
+bash repo/scripts/node.bash
+bash repo/scripts/latex.bash
+bash repo/scripts/misc.bash
 
 # Copies important files over
 cp -r repo/files/home/* ~/
+sudo chmod -R a+x ~/scripts
 
 # "Quick" update of everything
 ~/scripts/update-all.sh
