@@ -9,7 +9,7 @@ for DIRECTORY in $(ls | grep install-tl); do
 cd $DIRECTORY
 done
 
-./install-tl --profile ../files/texlive.profile
+./install-tl --profile ../repo/files/texlive.profile
 
 tlmgr init-usertree
 tlmgr repository set http://mirror.utexas.edu/ctan/systems/texlive/tlnet
