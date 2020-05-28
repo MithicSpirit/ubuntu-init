@@ -4,7 +4,10 @@ cd ~/.install-temp
 
 sudo apt install zsh -y
 
-sh -c "$(curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+export CHSH='no'
+export RUNZSH='no'
+export KEEP_ZSHRC='yes'
+sh -c "$(curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 mkdir fonts
