@@ -16,3 +16,6 @@ tlmgr repository set http://mirror.utexas.edu/ctan/systems/texlive/tlnet
 
 cd ~/.install-temp
 rm texlive
+for DIRECTORY in $(ls | grep install-tl); do
+rm -rf $DIRECTORY
+done
