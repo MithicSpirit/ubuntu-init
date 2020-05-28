@@ -4,7 +4,7 @@ cd "~/.install-temp"
 
 sudo apt install zsh
 
-sh -c "$(curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 mkdir fonts
@@ -14,3 +14,5 @@ curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > fonts/MesloLGS NF Bold Italic.ttf
 sudo mv fonts/*.ttf /usr/share/fonts/truetype/
 rm -rf fonts
+
+sudo chsh mithic -s /usr/bin/zsh
