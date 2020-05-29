@@ -89,7 +89,7 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autopep8 command-not-found common-aliases copyfile dirhistory node
-  npm pip python z dirpersist vscode)
+  npm pip python dirpersist vscode)
 
 source $ZSH/oh-my-zsh.sh
 
