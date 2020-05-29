@@ -14,14 +14,8 @@ done
 tlmgr init-usertree
 tlmgr repository set http://mirror.utexas.edu/ctan/systems/texlive/tlnet
 
-sudo perl -MCPAN -e 'install "YAML::Tiny"'
-sudo perl -MCPAN -e 'install "File::HomeDir"'
-sudo perl -MCPAN -e 'install "Unicode::GCString"'
-sudo perl -MCPAN -e 'install "Log::Log4perl"'
-sudo perl -MCPAN -e 'install "Log::Dispatch"'
-
 cd ~/.install-temp
-rm texlive
+rm -f texlive
 for DIRECTORY in $(ls | grep install-tl); do
 rm -rf $DIRECTORY
 done
