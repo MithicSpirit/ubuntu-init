@@ -1,0 +1,131 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mlastyle}[2020/05/08 MLA Style]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Package guide:
+%   \documentclass{article}
+%   \usepackage[<<`cmr' or `times'>>]{mlastyle}
+%
+%   \title{<<Full title>>}
+%   \author{<<First name>>}{<<Last name>>}
+%   \professor{<<Professor name>>}
+%   \course{<<Course name/info>>}
+%
+%   \begin{document}
+%   \begin{mla}
+%
+%   <<Essay content>>
+%
+%   \begin{workscited}
+%
+%   \bibent
+%   <<MLA citation>>
+%
+%   \end{workscited}
+%   \end{mla}
+%   \end{document}
+%
+%   Use the `mlaquote' environment for single-paragraph blockquotes
+%   and the `mlaquotation' environment for multi-paragraph blockquotes
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% General package imports
+\RequirePackage{ifpdf,setspace,fancyhdr,etoolbox}
+\RequirePackage[english]{datetime2}
+
+% Computer Modern Roman (default) vs. Times New Roman
+% Uses `etoolbox'
+\newtoggle{timesnewroman}
+\DeclareOption{times}{\toggletrue{timesnewroman}}
+\DeclareOption{cmr}{\togglefalse{timesnewroman}}
+
+\ExecuteOptions{cmr}
+\ProcessOptions\relax
+
+\iftoggle{timesnewroman}{\RequirePackage{times}}
+
+% Font dimensions
+\fontdimen2\font=0.65ex
+\font\italics=cmti12
+\fontdimen2\italics=0.65ex
+\font\bold=cmbx12
+\fontdimen2\bold=0.65ex
+
+% Date formatting
+%% Uses `datetime2'
+\renewcommand{\DTMdisplaydate}[4]{\number#3\ \DTMenglishmonthname{#2}\ \number#1}
+
+% Page setup
+%% Uses `ifpdf'
+\ifpdf
+    \RequirePackage[pdftex]{color,graphicx}
+    \pdfpagewidth=\paperwidth
+    \pdfpageheight=\paperheight
+    \RequirePackage{thumbpdf}
+    \pdfcompresslevel=9
+\else
+    \RequirePackage[dvips]{graphicx}
+\fi
+
+% correct page size
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\footskip}{40pt}
+
+% One inch borders
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{-1in}
+
+% eliminates margin notes
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\marginparwidth}{0in}
+\setlength{\marginparpush}{0in}
+\setlength{\marginparsep}{0in}
+
+% Double space
+%% Uses `setspace'
+\doublespacing
+
+% Inter-paragraph spacing
+\setlength{\parskip}{0pt}
+
+% Places heading 1/2 inch from top of page
+\setlength{\topmargin}{.5in}
+\setlength{\headsep}{18pt}
+\setlength{\headheight}{14.49998pt}
+
+% Last name and page number on every page
+%% Uses `fancyhdr'
+\fancypagestyle{norule}{\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}}
+\fancyhf{}
+\pagestyle{headings}
+\pagestyle{norule}
+
+% Easy tabbing (where necessary)
+\newcommand{\tab}{\hspace{0.5in}}
+
+% MLA environment and header
+\renewcommand{\title}[1]{\newcommand{\vartitle}{#1}}
+\renewcommand{\author}[2]{\newcommand{\varauthor}{#1 #2}\newcommand{\varlastname}{#2}}
+\newcommand{\professor}[1]{\newcommand{\varprofessor}{#1}}
+\newcommand{\course}[1]{\newcommand{\varcourse}{#1}}
+
+\newenvironment{mla}{\fancyhead[RO]{\varlastname\ \thepage}\raggedright%
+\varauthor\\\varprofessor\\\varcourse\\\today\\\centering\vartitle\\%
+\frenchspacing\raggedright\setlength{\parindent}{.5in}}{\newpage}
+
+% MLA quoting
+\newenvironment{mlaquote}{\list{}{\leftmargin=.5in}\item[]\parskip=0pt\vspace{-5px}}%
+{\endlist\vspace{-10px}}
+
+\newenvironment{mlaquotation}{\list{}{\leftmargin=.5in}\item[]%
+\parskip=0pt\parindent=0.5in\vspace{-5px}\tab}{\endlist\vspace{-10px}}
+
+% Work citing
+\newcommand{\bibent}{\noindent\hangindent 40pt}
+\newenvironment{workscited}{\newpage{\centering Works Cited\\}}{\newpage}
