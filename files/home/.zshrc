@@ -127,7 +127,6 @@ alias su="sudo su"
 alias py="python"
 alias pip="python -m pip"
 alias pip3="python3 -m pip"
-alias pip2="python2 -m pip --no-python-version-warning"
 
 alias tsc="npx tsc"
 alias eslint="npx eslint"

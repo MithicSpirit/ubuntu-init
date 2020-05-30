@@ -16,5 +16,4 @@ vmap <right> <nop>
 set guicursor+=n:blinkon40-blinkoff40
 set clipboard+=unnamedplus
 
-let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
