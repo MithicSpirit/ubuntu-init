@@ -12,4 +12,4 @@ nvm alias default 'lts/*'
 nvm use default
 
 nvm install-latest-npm
-npm -g install eslint neovim typescript yarn @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm -g install eslint neovim typescript yarn @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier
