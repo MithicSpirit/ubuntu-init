@@ -123,6 +123,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias su="sudo su"
+alias up-all="~/scripts/update-all.sh"
 
 alias py="python"
 alias pip="python -m pip"
