@@ -8,10 +8,10 @@ curl -L 'https://go.microsoft.com/fwlink/?LinkID=760868' > vscode.deb
 sudo -A apt install ./vscode.deb
 rm -f vscode.deb
 
-touch fonts
-cd fonts
+mkdir firacode
+cd firacode
 curl -L 'https://github.com/tonsky/FiraCode/releases/download/4/Fira_Code_v4.zip' > firacode.zip
 unzip firacode.zip
 sudo -A mv ttf/*.ttf /usr/share/fonts/truetype/
 cd ~/.install-temp
-rm -rf fonts
+rm -rf firacode
