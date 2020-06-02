@@ -13,9 +13,9 @@ export SUDO_ASKPASS="/home/mithic/scripts/pswd"
 sudo -Av && echo || exit
 
 # Install dependencies
-sudo -v apt update
-sudo -v apt upgrade -y
-sudo -v apt install git curl -y
+sudo -A apt update
+sudo -A apt upgrade -y
+sudo -A apt install git curl -y
 
 # Download repo
 git clone --depth=1 https://github.com/MithicSpirit/ubuntu-init.git ./repo
@@ -33,7 +33,7 @@ for FILE in $(ls -A repo/files/home); do
 cp repo/files/home/$FILE ~/
 done
 
-sudo -v chmod -R a+x ~/scripts
+sudo -A chmod -R a+x ~/scripts
 
 # "Quick" update of everything
 ~/scripts/update-all.sh
@@ -43,8 +43,8 @@ cd ~
 ln -s scripts/update-all.sh upgrade
 
 # Clean up
-sudo -v apt remove vim -y
-sudo -v apt autoremove -y
+sudo -A apt remove vim -y
+sudo -A apt autoremove -y
 
 rm -rf ~/.install-temp # Self destruct
 

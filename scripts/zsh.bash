@@ -2,7 +2,7 @@
 
 cd ~/.install-temp
 
-sudo -v apt install zsh -y
+sudo -A apt install zsh -y
 
 export CHSH='no'
 export RUNZSH='no'
@@ -15,7 +15,7 @@ curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf > "fonts/MesloLGS NF Bold.ttf"
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf > "fonts/MesloLGS NF Italic.ttf"
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > "fonts/MesloLGS NF Bold Italic.ttf"
-sudo -v mv fonts/*.ttf /usr/share/fonts/truetype/
+sudo -A mv fonts/*.ttf /usr/share/fonts/truetype/
 rm -rf fonts
 
-sudo -v chsh mithic -s /usr/bin/zsh
+sudo -A chsh mithic -s /usr/bin/zsh
