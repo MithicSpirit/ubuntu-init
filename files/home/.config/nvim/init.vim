@@ -13,7 +13,11 @@ vmap <down> <nop>
 vmap <left> <nop>
 vmap <right> <nop>
 
-set guicursor+=n:blinkon40-blinkoff40
 set clipboard+=unnamedplus
+
+set number
+set smartcase
+set background=dark
+set nobackup
 
 let g:python3_host_prog = '/usr/bin/python3'
