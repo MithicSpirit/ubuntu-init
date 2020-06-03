@@ -15,7 +15,9 @@ curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf > "meslo/MesloLGS NF Bold.ttf"
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf > "meslo/MesloLGS NF Italic.ttf"
 curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > "meslo/MesloLGS NF Bold Italic.ttf"
-sudo -A mv meslo/*.ttf /usr/share/fonts/truetype/
+sudo mkdir /usr/share/fonts/truetype/fonts-meslolgs
+sudo -A mv meslo/*.ttf /usr/share/fonts/truetype/fonts-meslolgs
+sudo fc-cache -f /usr/share/fonts/truetype
 rm -rf meslo
 
 sudo -A chsh mithic -s /usr/bin/zsh
