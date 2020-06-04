@@ -2,7 +2,7 @@
 
 cd ~/.install-temp
 
-sudo -A apt install tlp powertop xclip gimp krita vlc ffmpeg neofetch cmatrix -y
+sudo -A apt install tlp powertop xclip gimp krita vlc ffmpeg neofetch cmatrix htop -y
 sudo -A snap install --beta authy
 
 curl -L 'https://canary.discord.com/api/download/canary?platform=linux&format=deb' > discord.deb
