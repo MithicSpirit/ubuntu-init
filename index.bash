@@ -9,7 +9,7 @@ export PSWD
 
 echo '#!/bin/bash' > pswd
 echo 'echo "$PSWD"' >> pswd
-export SUDO_ASKPASS="/home/mithic/scripts/pswd"
+export SUDO_ASKPASS="/home/mithic/.install-temp/pswd"
 sudo -Av && echo || exit
 
 # Install dependencies
