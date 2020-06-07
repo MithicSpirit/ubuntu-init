@@ -10,6 +10,8 @@ sudo -Av && echo || exit
 echo -e "\nAptitude"
 sudo -A $(which apt) update &&
 	sudo -A $(which apt) upgrade -y
+sudo -A $(which apt) autoremove
+sudo -A $(which apt) autoclean
 
 echo -e "\nLaTeX"
 sudo -AH $(which tlmgr) update --self --all
