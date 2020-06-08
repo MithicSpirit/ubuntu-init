@@ -125,6 +125,9 @@ export EDITOR='nvim'
 alias su="sudo su"
 alias up-all="~/scripts/update-all.sh"
 alias du="dust"
+alias ..="cd .."
+alias mv="mv -i"
+alias rm="rm -i"
 
 alias py="python"
 alias pip="python -m pip"
@@ -137,5 +140,5 @@ alias eslint="npx eslint"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # NVM stuff
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
