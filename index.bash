@@ -37,7 +37,7 @@ for FILE in $(ls -A repo/files/home); do
 cp repo/files/home/$FILE ~/
 done
 
-sudo -A chmod -R a+x ~/scripts
+sudo -A chmod -R u+x ~/scripts
 
 # "Quick" update of everything
 ~/scripts/update-all.sh
