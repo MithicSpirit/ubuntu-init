@@ -10,6 +10,8 @@ export PSWD
 echo '#!/bin/bash' > pswd
 echo 'echo "$PSWD"' >> pswd
 export SUDO_ASKPASS="/home/mithic/.install-temp/pswd"
+chmod -R u+x ~/.install-temp
+
 sudo -Av && echo || exit
 
 # Install dependencies
@@ -19,6 +21,8 @@ sudo -A apt install git curl -y
 
 # Download repo
 git clone --depth=1 https://github.com/MithicSpirit/ubuntu-init.git ./repo
+chmod -R u+x ~/.install-temp
+
 
 # Run scripts
 bash repo/scripts/zsh.bash
