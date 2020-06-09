@@ -8,4 +8,4 @@ curl -L https://bootstrap.pypa.io/get-pip.py > get-pip.py
 python3 get-pip.py
 rm -f get-pip.py
 
-~/.local/bin/pip3 install neovim youtube-dl manimlib pipupgrade matplotlib pycairo pygobject pillow flake8 requests
+~/.local/bin/pip3 install neovim youtube-dl manimlib pipupgrade matplotlib pycairo pygobject pillow flake8 requests black
